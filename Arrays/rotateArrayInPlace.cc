@@ -21,6 +21,7 @@
 
 using namespace std;
 
+// O(nk)
 void rotate_iter(vector<int> &arr, int k)
 {
     int n = arr.size();
@@ -42,6 +43,7 @@ void rotate_iter(vector<int> &arr, int k)
   
 }
 
+// O(n)
 void rotate_byrev(vector<int> &arr, int k)
 {
     if (k > arr.size()) return;
@@ -57,7 +59,7 @@ void rotate_byrev(vector<int> &arr, int k)
         left++;
         right--;
     }  
-    // reverse n-k-2, 0 
+    // reverse n-k-1, 0 
     right  =  arr.size()-k-1; 
     left =  0;
     

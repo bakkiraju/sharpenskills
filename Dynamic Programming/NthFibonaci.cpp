@@ -21,9 +21,23 @@ int getFib(int n)
    return helper(n, memoize);
 }
 
+int getFib2(int n)
+{
+   int cache[n] = {-1};
+   cache[0] = 0; cache[1] = 1;
 
+   for(int i=2; i <= n; i++)
+   {
+      cache[i] = cache[i-1] + cache[i-2];
+   }
+
+  return cache[n-1];
+}
+
+// 0 1 1 2 3 5 8 13 21 34 55
 int main()
 {
     cout << getFib(10) << endl;
+    cout << getFib2(10) << endl;
     return 0;
 }
